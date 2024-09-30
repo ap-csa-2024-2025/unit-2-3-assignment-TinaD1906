@@ -2,8 +2,17 @@ public class Classwork
 {
   public static void main(String[] args)
   {
-    firstLastN("apple", 2);
-    System.out.print(firstLastN);
+    String word1 = firstLastN("apple", 2);
+    System.out.println(word1);
+
+    String cutWord = delEnd("family",3);
+    System.out.println(cutWord);
+
+    int compareWord = compareLowerCase("animal","candle");
+    System.out.println(compareWord);
+
+    int lengthOfFirst = lengthFirst("Everything in its righ place");
+    System.out.println(lengthOfFirst);
   }
 
   public static String firstLastN(String word, int n)
@@ -24,5 +33,25 @@ public class Classwork
     return output;
 
   }
+  public static String delEnd(String s, int n)
+  {
+    int stoppingIndex = s.length() - n;
+    String output = s.substring(0, stoppingIndex); // substring(start);
+    return output;
+  }
 
+  public static int compareLowerCase(String firstWord, String secondWord)
+  {
+   int output = firstWord.compareTo(secondWord);
+   return output;
+  }
+
+  public static String lengthFirst(String sentence)
+  {
+    int indexOfEndOfFirstWord = sentence.indexOf(" ");
+    String firstWord = sentence.substring(0, indexOfEndOfFirstWord);
+    return firstWord.length();
+
+  }
+  
 }
